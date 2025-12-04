@@ -11,3 +11,8 @@ A two-stage cross-lead distillation framework for single-lead ECG AF detection t
 
  <img src="Figure/framework.png" width="650"> 
 
+## Environment Setup
+
+
+
+To set up the environment for this project, you can use the [packages_ECGDG.txt](packages_ECGDG.txt) file located in the repository. This file contains a list of Python packages and their specific versions required for the project.
