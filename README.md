@@ -9,7 +9,7 @@
 
 A two-stage cross-lead distillation framework for single-lead ECG AF detection that explicitly targets domain generalization.
 
- <img src="Figure/framework.png" width="650"> 
+ <img src="Figure/framework.png" width="850"> 
 
 ## Environment Setup
 
@@ -48,4 +48,4 @@ Additionally, we use a **parameter-free alignment strategy** to handle mismatche
 
 These innovations lead to more effective AF detection and more stable training.
 
- <img src="Figure/backbone compare.jpg" width="650"> 
+ <img src="Figure/backbone compare.jpg" width="230"> 
