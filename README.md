@@ -9,5 +9,5 @@
 
 A two-stage cross-lead distillation framework for single-lead ECG AF detection that explicitly targets domain generalization.
 
- <img src="Figure/framework.jpg" width="650"> 
+ <img src="Figure/framework.png" width="650"> 
 
