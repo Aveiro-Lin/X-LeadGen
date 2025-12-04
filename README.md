@@ -34,3 +34,18 @@ The training and testing of our model is divided into several stages. Each stage
    In our experiment, we perform **small-sample fine-tuning** to enhance the performance of the Student Network. The relevant code for this fine-tuning experiment can be found in the file: [finetune of Stage 2.ipynb](finetune%20of%20Stage%202.ipynb).
 
 Please make sure to run the files in the sequence mentioned above for proper training and testing of the model.
+
+
+## Backbone Design Innovation
+
+Our model’s backbone is inspired by the 33-layer Residual CNN from Hannun et al. (2019)~\cite{Hannun}, with two main innovations:
+
+1. **Early Pooling**: Unlike the original design, which performs pooling after each residual block, we apply pooling before convolution. This compresses the resolution early, enabling convolutions to work on coarser representations and capture long-range temporal dependencies, crucial for detecting arrhythmic patterns like AF.
+
+2. **Refined Residual Pathway**: We introduce a skip connection after the second convolution in each block, replacing the post-convolution pooling. This design allows for non-linear transformations before merging, preserving gradient flow and enhancing feature representations.
+
+Additionally, we use a **parameter-free alignment strategy** to handle mismatches in channel dimensions caused by filter expansion, employing zero-padding every four blocks. This avoids extra parameters while maintaining residual flow and improving stable training.
+
+These innovations lead to more effective AF detection and more stable training.
+
+ <img src="Figure/backbone compare.jpg" width="650"> 
