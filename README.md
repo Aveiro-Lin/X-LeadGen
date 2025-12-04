@@ -38,14 +38,21 @@ Please make sure to run the files in the sequence mentioned above for proper tra
 
 ## Backbone Design Innovation
 
-Our model’s backbone is inspired by the 33-layer Residual CNN from Hannun et al. (2019)~\cite{Hannun}, with two main innovations:
+Our model’s backbone is inspired by the 33-layer Residual CNN from Hannun et al. (2019)~\cite{Hannun}, with two key innovations:
 
-1. **Early Pooling**: Unlike the original design, which performs pooling after each residual block, we apply pooling before convolution. This compresses the resolution early, enabling convolutions to work on coarser representations and capture long-range temporal dependencies, crucial for detecting arrhythmic patterns like AF.
+### 1. **Early Pooling**  
+Unlike the original design, which performs pooling after each residual block, we apply pooling **before** convolution. This early pooling step compresses the resolution, enabling convolutions to work on coarser representations and better capture long-range temporal dependencies—crucial for detecting arrhythmic patterns like AF.
 
-2. **Refined Residual Pathway**: We introduce a skip connection after the second convolution in each block, replacing the post-convolution pooling. This design allows for non-linear transformations before merging, preserving gradient flow and enhancing feature representations.
+### 2. **Refined Residual Pathway**  
+We introduce a **skip connection** after the second convolution in each block, replacing the post-convolution pooling. This design allows for non-linear transformations before merging, which helps preserve gradient flow and enhance feature representations.
 
-Additionally, we use a **parameter-free alignment strategy** to handle mismatches in channel dimensions caused by filter expansion, employing zero-padding every four blocks. This avoids extra parameters while maintaining residual flow and improving stable training.
+### 3. **Parameter-free Alignment Strategy**  
+To handle mismatches in channel dimensions caused by filter expansion, we adopt a **parameter-free alignment strategy**, which includes zero-padding every four blocks. This method avoids introducing extra parameters while maintaining residual flow, leading to more stable training.
 
-These innovations lead to more effective AF detection and more stable training.
+### **Outcome**  
+These innovations result in a more effective AF detection model and contribute to more stable training, ensuring robustness and high performance.
 
- <img src="Figure/backbone compare.jpg" width="230"> 
+### Model Architecture Overview:
+<img src="Figure/backbone_compare.jpg" align="left" width="250" style="margin-right: 20px;"/>
+*Illustration of the backbone architecture, highlighting the key components of early pooling, skip connections, and the FibRes Block.*
+
