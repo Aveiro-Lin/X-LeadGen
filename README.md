@@ -53,6 +53,6 @@ To handle mismatches in channel dimensions caused by filter expansion, we adopt 
 These innovations result in a more effective AF detection model and contribute to more stable training, ensuring robustness and high performance.
 
 ### Model Architecture Overview:
-<img src="Figure/backbone_compare.jpg" align="left" width="250" style="margin-right: 20px;"/>
+<img src="Figure/backbone_compare.jpg" align="left" width="250" style="margin-right: 20;"/>
 *Illustration of the backbone architecture, highlighting the key components of early pooling, skip connections, and the FibRes Block.*
 
